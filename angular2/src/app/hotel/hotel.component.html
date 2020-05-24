@@ -1,0 +1,38 @@
+
+<ul>
+    <li id = 'i0n'>
+        <button id ='nomeHotel' (click)="funca(hotelService.hoteis[0]._id)">
+            {{hotelService.hoteis[0].name}}
+
+
+        </button>
+    </li>
+    <li id = 'i0i' >
+        <img src="{{hotelService.hoteis[0].imagens[funcRandom()]}}" width="400" height="400">
+    </li>
+    <br>
+    <br>
+    <li id = 'i1n'>
+        <button id ='nomeHotel' (click)="funca(hotelService.hoteis[1]._id)">
+            {{hotelService.hoteis[1].name}}
+
+
+        </button>
+    </li>
+    <li id = 'i0i' >
+        <img src="{{hotelService.hoteis[1].imagens[funcRandom()]}}" width="400" height="400">
+    </li>
+    <br>
+    <br>
+    <li id = 'i2n'>
+        <button id ='nomeHotel' (click)="funca(hotelService.hoteis[2]._id)" >
+            {{hotelService.hoteis[2].name}}
+
+
+        </button>
+    </li>
+    <li id = 'i0i' >
+        
+        <img src="{{hotelService.hoteis[2].imagens[funcRandom()]}}" width="400" height="400">
+    </li>
+</ul>

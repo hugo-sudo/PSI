@@ -1,0 +1,23 @@
+<br><br>
+<button (click)="funcHoteis()">
+    Ver Hoteis
+</button>
+<br><br><br><br><br>
+<form >
+    <label for="email">email: </label>
+    <input type="string" id="email" name="email"/><br><br>
+    <label for="pass">password: </label>
+    <input type="password" id="pass" name="pass"/><br><br>
+    <input type="button" value="VerReservas" (click)="verReservas()">
+    <input type="button" value="criar Conta" (click)="criarConta()">
+</form>
+
+<ul *ngFor="let u of _userSerice.users">
+    <li >
+        {{u.email}}
+    </li>
+    <li >
+        {{u.password}}
+    </li>
+</ul>
+

@@ -1,0 +1,26 @@
+<ul *ngFor='let serv of _reservasService.reservas'>
+    <li *ngIf="serv.email == _router.url.toString().split('/')[2] && check(serv.datas) && checkValor(serv.totalPago)">
+        {{serv.nomeHotel}}
+    </li>
+    <li *ngIf="serv.email == _router.url.toString().split('/')[2] && check(serv.datas) && checkValor(serv.totalPago)">
+      {{serv.tipoQuarto}}
+    </li>
+    <li *ngIf="serv.email == _router.url.toString().split('/')[2] && check(serv.datas) && checkValor(serv.totalPago)">
+      {{serv.datas}}
+    </li>
+    <li *ngIf="serv.email == _router.url.toString().split('/')[2] && check(serv.datas) && checkValor(serv.totalPago)">
+        preço total: {{serv.totalPago}}
+      </li>
+  </ul>
+
+<label for="inicio">inicio: </label>
+<input type="date" id="inicio" name="inicio"><br><br>
+<label for="fim">fim: </label>
+<input type="date" id="fim" name="fim"><br><br>
+<input type="button" value="filtrarCheckIn" (click)="filtrarCheckIn()">
+
+<br><br>
+
+<label for="preco">valor minimo da reserva: </label>
+<input type="number" id="preco" name="preco"><br><br>
+<input type="button" value="filterValor" (click)="filterValor()">

@@ -1,0 +1,31 @@
+
+
+<div *ngIf="_router.url == '/home'">
+  <app-home></app-home>
+</div>
+
+
+<div *ngIf="_router.url == '/hotel'">
+  <app-hotel></app-hotel>
+</div>
+
+
+<div *ngIf=" _router.url == getId()">
+  <app-hotel-individual></app-hotel-individual>
+</div>
+
+<div *ngIf="getIdQuarto()">
+  <app-quarto></app-quarto>
+</div>
+
+<div *ngIf="verTipo()">
+  <app-reserva></app-reserva>
+</div>
+
+<div *ngIf="verEmail()">
+  <app-reservas></app-reservas>
+</div>
+
+
+
+ 

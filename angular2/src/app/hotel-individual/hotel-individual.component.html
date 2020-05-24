@@ -1,0 +1,71 @@
+<h1 >{{_hotelService.hotel.name}}</h1>
+<h4> Desde €{{_hotelService.hotel.lowestPrice}} </h4>
+<h4>description: {{_hotelService.hotel.description}}</h4>
+<h4>morada: {{_hotelService.hotel.location}}</h4>
+<h4>coordenadas GPS: {{_hotelService.hotel.gps}}</h4>
+<h4>Telefone: {{_hotelService.hotel.phone}}</h4>
+<h3>email: {{_hotelService.hotel.email}}</h3>
+<h3>Serviços: </h3>
+<ul *ngFor='let serv of _hotelService.hotel.services'>
+  <li>
+    {{ serv }}
+  </li>
+</ul>
+
+<h4>nº quartos:  {{_hotelService.hotel.totalBedrooms}}</h4>
+<form>
+  <label for="minp">Preço Minimo: </label>
+  <input type="number" id="minp" name="minp"><br><br>
+  <label for="maxp">Preco Máximo:</label>
+  <input type="number" id="maxp" name="maxp"><br><br>
+  <input type="button" value="Filtrar" (click)="filtrar()">
+</form>
+<form>
+  <label for="iniciop">Inicio Periodo: </label>
+  <input type="date" id="inicioperiodo" name="iniciop"><br><br>
+  <label for="fimp">Fim periodo: </label>
+  <input type="date" id="fimperiodo" name="fimp"><br><br>
+  <input type="button" value="filtrarData" (click)="filtrarData()">
+</form>
+<h3>Quartos disponiveis: </h3>
+<ul>
+<li *ngIf="showQ1" ><a [routerLink]="['hotel/quarto1/', _hotelService.hotel._id]" routerLinkActive="active"> {{_hotelService.hotel.quarto1}}</a>
+                            <!-- *ngIf="precoVisto" -->
+  <button (click)="funca(_hotelService.hotel._id, '0')" *ngIf="precoVisto">Reservar</button><br>
+</li>
+<p id="quarto1preco"></p> 
+<br>
+<li *ngIf="showQ2" id="showq2"><a [routerLink]="['hotel/quarto2/', _hotelService.hotel._id]" routerLinkActive="active"> {{_hotelService.hotel.quarto2}}</a>
+                              <!-- *ngIf="precoVisto" -->
+  <button (click)="funca(_hotelService.hotel._id, '1')" *ngIf="precoVisto">Reservar</button><br>
+</li>
+<p id="quarto2preco" ></p>
+<br>
+<li *ngIf="showQ3"><a [routerLink]="['hotel/quarto3/', _hotelService.hotel._id]" routerLinkActive="active"> {{_hotelService.hotel.quarto3}}</a>
+                               <!-- *ngIf="precoVisto" -->
+  <button (click)="funca(_hotelService.hotel._id, '2')" *ngIf="precoVisto" >Reservar</button><br>
+</li>
+<p id="quarto3preco"></p> 
+<br>
+
+<li *ngIf="showQ4 && _hotelService.hotel.name == 'Douro Vinhas'"><a [routerLink]="['hotel/quarto4/', _hotelService.hotel._id]" routerLinkActive="active"> {{_hotelService.hotel.quarto4}}</a>
+                              <!-- *ngIf="precoVisto" -->
+  <button (click)="funca(_hotelService.hotel._id, '3')" *ngIf="precoVisto">Reservar</button><br>
+</li>
+<p id="quarto4preco" ></p>
+
+<br>
+<li><a [routerLink]="['hotel/todos/', _hotelService.hotel._id]" routerLinkActive="active"> ver serviços lado a lado</a>
+</ul>
+
+<br>
+
+<br><br>
+
+
+
+<li *ngFor="let i of _hotelService.hotel.imagens" id="imgs">
+  <img src="{{i}}" >
+</li>
+
+

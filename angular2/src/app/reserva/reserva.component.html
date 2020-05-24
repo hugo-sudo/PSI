@@ -1,0 +1,49 @@
+<h1 id="gg"></h1>
+<h2 id="tipo0" *ngIf="showQ1">{{_hotelService.hotel.quarto1}}</h2>
+<h2 id="tipo1" *ngIf="showQ2">{{_hotelService.hotel.quarto2}}</h2>
+<h2 id="tipo2" *ngIf="showQ3">{{_hotelService.hotel.quarto3}}</h2>
+<h2 id="tipo3" *ngIf="showQ4">{{_hotelService.hotel.quarto4}}</h2>
+<h2 id="preco"></h2>
+
+<button (click)="cancelar()">cancelar</button>
+<button (click)="confirmar(_hotelService.hotel)">confirmar</button>
+<br><br>
+<h3 id="nome"></h3>
+<h3 id="morada"></h3>
+<h3 id="telefone"></h3>
+<h3 id="email"></h3>
+<h3 id="nif"></h3>
+<h3 id="nCartao"></h3>
+<h3 id="prazo"></h3>
+<h3 id="cvv"></h3>
+
+
+
+<form *ngIf="confirmado">
+    <label for="nome">Primeiro Nome: </label><br>
+    <input type="text" id="nomeInput" name="nome" ><br>
+
+    <label for="morada">Morada: </label><br>
+    <input type="text" id="moradaInput" name="morada" ><br>
+
+    <label for="telefone">Telefone: </label><br>
+    <input type="number" id="telefoneInput" name="telefone"><br>
+
+    <label for="email">Email: </label><br>
+    <input type="email" id="emailInput" name="email" ><br>
+
+    <label for="NIF">Nif: </label><br>
+    <input type="number" id="nifInput"><br>
+
+    <label for="nCartao">nº cartao de credito: </label><br>
+    <input type="number" id="nCartaoInput"><br>
+
+    <label for="prazo">Validade: </label><br>
+    <input type="text" id="validadeInput" name="prazo" ><br>
+
+    <label for="CVV">CVV:</label><br>
+    <input type="number" id="cvvInput"><br>
+
+    <button type="button" (click)="checkValues()">Verify Values</button>
+    <input type="submit" id ="submit" value="Submit" disabled="disabled">
+  </form>

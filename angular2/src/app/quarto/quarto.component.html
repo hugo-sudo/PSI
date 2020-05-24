@@ -1,0 +1,47 @@
+
+<div *ngIf="verificarQuarto(1) || todos()">
+  <p>Época baixa decorre desde 15 de janeiro a 31 e maio e desde 30 de setembro a 15 de dezembro; a época alta decorre durante o resto do ano </p>
+    <p>{{_hotelService.hotel.quarto1}}</p>
+    <ul *ngFor='let serv of _hotelService.hotel.quarto1servicos'>
+      <li >
+        {{ serv }}
+      </li>
+    </ul>
+    <p>Preço época baixa: {{_hotelService.hotel.quarto1precoBaixa}}</p>
+    <p>Preço época alta: {{_hotelService.hotel.quarto1precoAlta}}</p>
+</div>
+<div *ngIf="verificarQuarto(2) || todos()">
+  <p>Época baixa decorre desde 15 de janeiro a 31 e maio e desde 30 de setembro a 15 de dezembro; a época alta decorre durante o resto do ano </p>
+    <p>{{_hotelService.hotel.quarto2}}</p>
+    <ul *ngFor='let serv of _hotelService.hotel.quarto2servicos'>
+      <li >
+        {{ serv }}
+      </li>
+    </ul>
+    <p>Preço época baixa: {{_hotelService.hotel.quarto2precoBaixa}}</p>
+    <p>Preço época alta: {{_hotelService.hotel.quarto2precoAlta}}</p>
+</div>
+<div *ngIf="verificarQuarto(3) || todos()">
+  <p>Época baixa decorre desde 15 de janeiro a 31 e maio e desde 30 de setembro a 15 de dezembro; a época alta decorre durante o resto do ano </p>
+    <p>{{_hotelService.hotel.quarto3}}</p>
+    <ul *ngFor='let serv of _hotelService.hotel.quarto3servicos'>
+      <li >
+        {{ serv }}
+      </li>
+    </ul>
+    <p>Preço época baixa: {{_hotelService.hotel.quarto3precoBaixa}}</p>
+    <p>Preço época alta: {{_hotelService.hotel.quarto3precoAlta}}</p>
+</div>
+<div *ngIf="verificarQuarto(4) || todos()">
+  <p>Época baixa decorre desde 15 de janeiro a 31 e maio e desde 30 de setembro a 15 de dezembro; a época alta decorre durante o resto do ano </p>
+    <p>{{_hotelService.hotel.quarto4}}</p>
+    <ul *ngFor='let serv of _hotelService.hotel.quarto4servicos'>
+      <li >
+        {{ serv }}
+      </li>
+    </ul>
+    <p>Preço época baixa: {{_hotelService.hotel.quarto4precoBaixa}}</p>
+    <p>Preço época alta: {{_hotelService.hotel.quarto4precoAlta}}</p>
+</div>
+
+
