@@ -21,7 +21,7 @@ export class ReservasComponent implements OnInit {
   }
   onlySameNif(nif: string):boolean{
     console.log(nif);
-    console.log(this._router.url.split("/")[1].toString())
+    console.log(this._router.url.split("/")[1].toString());
     return nif == this._router.url.split("/")[1].toString();
   }
 

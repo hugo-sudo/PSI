@@ -11,7 +11,7 @@ import { Reserva } from './reserva.model';
 export class ReservaService {
   reservaCurrente: Reserva;
   reservas:Reserva[];
-  readonly baseURL = 'http://localhost:3009/reserva'
+  readonly baseURL = 'http://appserver.alunos.di.fc.ul.pt:3009/reserva';
   constructor(private http: HttpClient) { }
 
 

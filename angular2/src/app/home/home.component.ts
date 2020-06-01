@@ -45,6 +45,8 @@ export class HomeComponent implements OnInit {
         }
       }
       // this._router.navigate(['/reservas', email]);
+      alert('Conta não está registada');
+      return ;
     }
     (document.getElementById('email') as HTMLInputElement).value = '';
     (document.getElementById('pass') as HTMLInputElement).value = '';
@@ -52,6 +54,7 @@ export class HomeComponent implements OnInit {
   }
 
   criarConta(){
+    const emailVerifier = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const email = (document.getElementById('email') as HTMLInputElement).value;
     const password = (document.getElementById('pass') as HTMLInputElement).value;
     for (const u of this._userSerice.users){
@@ -62,6 +65,10 @@ export class HomeComponent implements OnInit {
         console.log('email ja existe: ' + email);
         return;
       }
+    }
+    if (email == '' || email == null || password == '' || password == null || !emailVerifier.test(email)) {
+      alert('É preciso preencher os campos');
+      return;
     }
     const newUser: User = new User(email, password);
     this._userSerice.postUser(newUser).subscribe();

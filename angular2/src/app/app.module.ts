@@ -12,6 +12,7 @@ import { QuartoComponent } from './quarto/quarto.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReservaComponent } from './reserva/reserva.component';
 import { ReservasComponent } from './reservas/reservas.component';
+import { ReservasHelperComponent } from './reservas-helper/reservas-helper.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReservasComponent } from './reservas/reservas.component';
     HomeComponent,
     QuartoComponent,
     ReservaComponent,
-    ReservasComponent
+    ReservasComponent,
+    ReservasHelperComponent
   ],
   imports: [
     BrowserModule,

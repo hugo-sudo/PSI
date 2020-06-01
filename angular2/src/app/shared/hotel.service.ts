@@ -10,8 +10,8 @@ import { Hotel } from './hotel.model';
 export class HotelService {
   hoteis: Hotel[];
   hotel:Hotel;
-  readonly baseURL = 'http://localhost:3009/hotel';
-  readonly otherBase = 'http://localhost:3009/hotel/:id'
+  readonly baseURL = 'http://appserver.alunos.di.fc.ul.pt:3009/hotel';
+  readonly otherBase = 'http://appserver.alunos.di.fc.ul.pt:3009/hotel/:id'
 
   constructor(private http: HttpClient) { }
 

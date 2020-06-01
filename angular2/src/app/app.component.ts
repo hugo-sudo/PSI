@@ -39,10 +39,14 @@ export class AppComponent {
       return (this._router.url.toString().split("/")[2] == "reservas" ||
       this._router.url.toString().split("/")[4] == "1" ||
       this._router.url.toString().split("/")[4] == "2" ||
-      this._router.url.toString().split("/")[4] == "3" );
+      this._router.url.toString().split("/")[4] == "3" ) && this._router.url.toString().split("/").length < 11;
     }
 
     public verEmail(){
       return this._router.url.toString().split("/")[1] == "reservas" 
+    }
+
+    public testSize(){
+      return this._router.url.toString().split("/").length > 11;
     }
 }

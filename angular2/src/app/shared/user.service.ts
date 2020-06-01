@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService {
   public users:User[];
-  readonly baseURL = 'http://localhost:3009/user'
+  readonly baseURL = 'http://appserver.alunos.di.fc.ul.pt:3009/user'
   constructor(private http: HttpClient) { }
 
 

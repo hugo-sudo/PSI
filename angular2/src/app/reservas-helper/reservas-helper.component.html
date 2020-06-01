@@ -1,0 +1,20 @@
+<h1 id="gg"></h1>
+<h2>De : {{_router.url.toString().split('/')[5]}} a {{_router.url.toString().split('/')[6]}}</h2>
+<h2>preco: {{_router.url.toString().split('/')[7]}}</h2>
+<h2 id="tipo0" *ngIf="showQ1">{{_hotelService.hotel.quarto1}}</h2>
+<h2 id="tipo1" *ngIf="showQ2">{{_hotelService.hotel.quarto2}}</h2>
+<h2 id="tipo2" *ngIf="showQ3">{{_hotelService.hotel.quarto3}}</h2>
+<h2 id="tipo3" *ngIf="showQ4">{{_hotelService.hotel.quarto4}}</h2>
+<h2 id="preco"></h2>
+
+<button (click)="cancelar()">cancelar</button>
+<button (click)="confirmar(_hotelService.hotel)">confirmar</button>
+<br><br>
+<h3 id="nome">{{_router.url.toString().split('/')[8].replace("%", " ")}}</h3>
+<h3 id="morada">{{this._router.url.toString().split('/')[9].replace("%", " ")}}</h3>
+<h3 id="telefone">{{this._router.url.toString().split('/')[10]}}</h3>
+<h3 id="email">{{this._router.url.toString().split('/')[11]}}</h3>
+<h3 id="nif">{{this._router.url.toString().split('/')[12]}}</h3>
+<h3 id="nCartao">{{this._router.url.toString().split('/')[13]}}</h3>
+<h3 id="prazo">{{this._router.url.toString().split('/')[14].replace("%2F", "/")}}</h3>
+<h3 id="cvv">{{this._router.url.toString().split('/')[15]}}</h3>

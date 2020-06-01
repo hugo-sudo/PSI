@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { QuartoComponent } from './quarto/quarto.component';
 import { ReservaComponent } from './reserva/reserva.component';
 import { ReservasComponent } from './reservas/reservas.component';
+import { ReservasHelperComponent } from './reservas-helper/reservas-helper.component';
 
 
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'hotel/quarto4/:id', component: QuartoComponent },
   { path: 'hotel/todos/:id', component: QuartoComponent },
   { path: 'hotel/reservas/:id/:tipo/:inicio/:fim/:preco', component: ReservaComponent },
+  { path: 'hotel/reservas/:id/:tipo/:inicio/:fim/:preco/:nome/:morada/:telefone/:email/:nif/:nCartao/:validade/:cvv', component: ReservasHelperComponent },
   { path: 'reservas/:email', component: ReservasComponent }
 ];
 

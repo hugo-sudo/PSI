@@ -7,6 +7,41 @@
 
 <button (click)="cancelar()">cancelar</button>
 <button (click)="confirmar(_hotelService.hotel)">confirmar</button>
+<form *ngIf="!confirmado">
+  <label for="iniciop">Inicio Periodo: </label>
+  <input type="date" id="inicioperiodo" name="iniciop"><br><br>
+  <label for="fimp">Fim periodo: </label>
+  <input type="date" id="fimperiodo" name="fimp"><br><br>
+  <input type="button" value="filtrarData" (click)="filtrarData()">
+</form>
+<h3 *ngIf="!confirmado">Quartos disponiveis: </h3>
+<ul *ngIf="!confirmado">
+<li *ngIf="showQ1" ><a [routerLink]="['hotel/quarto1/', _hotelService.hotel._id]" routerLinkActive="active"> {{_hotelService.hotel.quarto1}}</a>
+                            <!-- *ngIf="precoVisto" -->
+  <button (click)="funca(_hotelService.hotel._id, '0')" *ngIf="precoVisto">Reservar</button><br>
+</li>
+<p id="quarto1preco"></p>
+<br>
+<li *ngIf="showQ2" id="showq2"><a [routerLink]="['hotel/quarto2/', _hotelService.hotel._id]" routerLinkActive="active"> {{_hotelService.hotel.quarto2}}</a>
+                              <!-- *ngIf="precoVisto" -->
+  <button (click)="funca(_hotelService.hotel._id, '1')" *ngIf="precoVisto">Reservar</button><br>
+</li>
+<p id="quarto2preco" ></p>
+<br>
+<li *ngIf="showQ3"><a [routerLink]="['hotel/quarto3/', _hotelService.hotel._id]" routerLinkActive="active"> {{_hotelService.hotel.quarto3}}</a>
+                               <!-- *ngIf="precoVisto" -->
+  <button (click)="funca(_hotelService.hotel._id, '2')" *ngIf="precoVisto" >Reservar</button><br>
+</li>
+<p id="quarto3preco"></p>
+<br>
+
+<li *ngIf="showQ4 && _hotelService.hotel.name == 'Douro Vinhas'"><a [routerLink]="['hotel/quarto4/', _hotelService.hotel._id]" routerLinkActive="active"> {{_hotelService.hotel.quarto4}}</a>
+                              <!-- *ngIf="precoVisto" -->
+  <button (click)="funca(_hotelService.hotel._id, '3')" *ngIf="precoVisto">Reservar</button><br>
+</li>
+<p id="quarto4preco" ></p>
+</ul>
+<br>
 <br><br>
 <h3 id="nome"></h3>
 <h3 id="morada"></h3>
@@ -18,32 +53,32 @@
 <h3 id="cvv"></h3>
 
 
-
-<form *ngIf="confirmado">
+<form *ngIf="confirmado" >
     <label for="nome">Primeiro Nome: </label><br>
-    <input type="text" id="nomeInput" name="nome" ><br>
+    <input type="text" id="nomeInput" name="nome" placeholder="Gervásio Gomes" ><br>
 
     <label for="morada">Morada: </label><br>
-    <input type="text" id="moradaInput" name="morada" ><br>
+    <input type="text" id="moradaInput" name="morada" placeholder="Avenida das Couves nº40 5ºesquerdo" ><br>
 
     <label for="telefone">Telefone: </label><br>
-    <input type="number" id="telefoneInput" name="telefone"><br>
+    <input type="number" id="telefoneInput" name="telefone" placeholder="+351961234567"><br>
 
     <label for="email">Email: </label><br>
-    <input type="email" id="emailInput" name="email" ><br>
+    <input type="email" id="emailInput" name="email" placeholder="gervasio_gomes@gmail.com"><br>
 
-    <label for="NIF">Nif: </label><br>
-    <input type="number" id="nifInput"><br>
+    <label for="nif">Nif: </label><br>
+    <input type="number" id="nifInput" placeholder="123456789"><br>
 
     <label for="nCartao">nº cartao de credito: </label><br>
-    <input type="number" id="nCartaoInput"><br>
+    <input type="number" id="nCartaoInput" placeholder="1234567894563214"><br>
 
     <label for="prazo">Validade: </label><br>
-    <input type="text" id="validadeInput" name="prazo" ><br>
+    <input type="text" id="validadeInput" name="prazo" placeholder="10/2023"><br>
 
-    <label for="CVV">CVV:</label><br>
-    <input type="number" id="cvvInput"><br>
+    <label for="cvv">CVV:</label><br>
+    <input type="number" id="cvvInput" placeholder="123"><br>
 
-    <button type="button" (click)="checkValues()">Verify Values</button>
-    <input type="submit" id ="submit" value="Submit" disabled="disabled">
+
   </form>
+
+  <button type="button" (click)="checkValues()">Submit</button>
